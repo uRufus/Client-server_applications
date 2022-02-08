@@ -3,6 +3,7 @@
 содержимое и длину соответствующих переменных.
 """
 
+
 # Неправильный вариант
 def convert_to_bytes(words):
     if len(words) > 0:
@@ -18,7 +19,7 @@ def convert_to_bytes(words):
                 print(f"Слово '{b}' не входит в ASCII формат")
 
 
-#Правильный вариант
+# Правильный вариант
 def convert_to_bytes_eval(words):
     if len(words) > 0:
         for word in words:
