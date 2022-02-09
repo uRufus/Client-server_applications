@@ -13,6 +13,14 @@ write_to_csv(), в которую передавать ссылку на CSV-ф�
 
 import csv
 import re
+from chardet import detect
+
+
+def detect_file_encoding(file):
+    with open(file, 'rb') as f:
+        content = f.read()
+    encoding = detect(content)['encoding']
+    return encoding
 
 
 def get_data(files):
@@ -23,7 +31,8 @@ def get_data(files):
     data_list = [os_prod_list, os_name_list, os_code_list, os_type_list]
     main_data = ['Изготовитель системы', 'Название ОС', 'Код продукта', 'Тип системы']
     for file in files:
-        with open(file) as f_n:
+        encoding = detect_file_encoding(file)
+        with open(file, encoding=encoding) as f_n:
             f_n_reader = csv.reader(f_n)
             for row in f_n_reader:
                 for i in range(4):
@@ -35,12 +44,12 @@ def get_data(files):
         main_list.append([])
         for v in range(4):
             main_list[i + 1].append(data_list[v][i])
-    return main_list
+    return main_list, encoding
 
 
 def write_to_csv(write_to_file, read_from_files):
-    data = get_data(read_from_files)
-    with open(write_to_file, 'w') as f_n:
+    data, encoding = get_data(read_from_files)
+    with open(write_to_file, 'w', encoding=encoding) as f_n:
         f_n_writer = csv.writer(f_n)
         for row in data:
             f_n_writer.writerow(row)
