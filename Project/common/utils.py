@@ -6,7 +6,7 @@ from sys import exit
 def check_port(port):
     try:
         if port < 1024 or port > 65535:
-            raise ValueError()
+            raise ValueError
     except ValueError:
         print('В качестве порта может быть указано только число в диапазоне от 1024 до 65535.')
         exit(1)
