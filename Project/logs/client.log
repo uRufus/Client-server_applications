@@ -1,0 +1,12 @@
+2022-02-25 22:07:24,275 INFO     Запущен клиент с параметрами: адрес сервера : 127.0.0.1, порт : 7777
+2022-02-25 22:07:24,275 DEBUG    Сформировано presence сообщение для пользователя Kitty
+2022-02-25 22:07:24,275 DEBUG    Функция check_instance  с параметрами ({'action': 'presence', 'time': 1645816044.2756498, 'user': {'account_name': 'Kitty'}}, <class 'dict'>), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Функция check_instance  с параметрами ('{"action": "presence", "time": 1645816044.2756498, "user": {"account_name": "Kitty"}}', <class 'str'>), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Функция check_instance  с параметрами (b'{"action": "presence", "time": 1645816044.2756498, "user": {"account_name": "Kitty"}}', <class 'bytes'>), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Функция send_msg  с параметрами (<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55264), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1645816044.2756498, 'user': {'account_name': 'Kitty'}}), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Функция check_instance  с параметрами (b'{"response": 200}', <class 'bytes'>), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Функция check_instance  с параметрами ('{"response": 200}', <class 'str'>), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Функция check_instance  с параметрами ({'response': 200}, <class 'dict'>), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Функция get_msg  с параметрами (<socket.socket fd=512, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55264), raddr=('127.0.0.1', 7777)>,), {} была вызвана из функции main()
+2022-02-25 22:07:24,275 DEBUG    Разбор сообщения от сервера : {'response': 200}
+2022-02-25 22:07:24,275 INFO     Принят ответ от сервера: 200 : ok
