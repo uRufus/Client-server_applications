@@ -1,8 +1,15 @@
 import json
-from .variables import MAX_PACKAGE_LENGTH, ENCODING
+import os
+import sys
+
+sys.path.append(os.path.join(os.getcwd(), '..'))
+from common.variables import MAX_PACKAGE_LENGTH, ENCODING
 from sys import exit
 
+from decos import log
 
+
+@log
 def check_port(port):
     try:
         if port < 1024 or port > 65535:
@@ -12,6 +19,7 @@ def check_port(port):
         exit(1)
 
 
+@log
 def check_instance(variable, types):
     try:
         if not isinstance(variable, types):
@@ -21,6 +29,7 @@ def check_instance(variable, types):
         exit(1)
 
 
+@log
 def send_msg(sock, msg):
     check_instance(msg, dict)
     js_msg = json.dumps(msg)
@@ -30,6 +39,7 @@ def send_msg(sock, msg):
     sock.send(encoded_msg)
 
 
+@log
 def get_msg(client):
     encoded_response = client.recv(MAX_PACKAGE_LENGTH)
     check_instance(encoded_response, bytes)
