@@ -16,12 +16,15 @@ TIME = 'time'
 USER = 'user'
 ACCOUNT_NAME = 'account_name'
 DEFAULT_ACCOUNT_NAME = 'Kitty'
+SENDER = 'sender'
 
 
 PRESENCE = 'presence'
 RESPONSE = 'response'
 ERROR = 'error'
 RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
+MESSAGE = 'message'
+MESSAGE_TEXT = 'mess_text'
 
 # For tests
 OK_DICT = {RESPONSE: 200}
