@@ -16,7 +16,8 @@ TIME = 'time'
 USER = 'user'
 ACCOUNT_NAME = 'account_name'
 DEFAULT_ACCOUNT_NAME = 'Kitty'
-SENDER = 'sender'
+SENDER = 'from'
+DESTINATION = 'to'
 
 
 PRESENCE = 'presence'
@@ -25,9 +26,19 @@ ERROR = 'error'
 RESPONDEFAULT_IP_ADDRESSSE = 'respondefault_ip_addressse'
 MESSAGE = 'message'
 MESSAGE_TEXT = 'mess_text'
+EXIT = 'exit'
 
 # For tests
 OK_DICT = {RESPONSE: 200}
 ERROR_DICT = {RESPONSE: 400, ERROR: 'Bad Request'}
 ERROR_DICT_SERVER = {ERROR: 'Bad Request', RESPONDEFAULT_IP_ADDRESSSE: 400}
 DICT_SEND = {ACTION: PRESENCE, TIME: 1, USER: {ACCOUNT_NAME: DEFAULT_ACCOUNT_NAME}}
+
+# Словари - ответы:
+# 200
+RESPONSE_200 = {RESPONSE: 200}
+# 400
+RESPONSE_400 = {
+    RESPONSE: 400,
+    ERROR: None
+}
