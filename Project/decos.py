@@ -1,22 +1,20 @@
 import sys
+import logs.config_server_log
+import logs.config_client_log
 import logging
-import traceback
 
-import logs.client_log_config
-import logs.server_log_config
-
-
-# Определяем куда писать лог
-if sys.argv[0].find('client.py') == -1:
-    LOGGER = logging.getLogger('server')
+# метод определения модуля, источника запуска.
+if sys.argv[0].find('client_dist') == -1:
+    #если не клиент то сервер!
+    logger = logging.getLogger('server_dist')
 else:
-    LOGGER = logging.getLogger('client')
+    # ну, раз не сервер, то клиент
+    logger = logging.getLogger('client_dist')
 
 
 def log(func_to_log):
-    def log_saver(*args, **kwargs):
-        ret = func_to_log(*args, **kwargs)
-        LOGGER.debug(f'Функция {func_to_log.__name__}  с параметрами {args}, {kwargs} была '
-                     f'вызвана из функции {traceback.format_stack()[0].strip().split()[-1]}')
+    def log_saver(*args , **kwargs):
+        logger.debug(f'Была вызвана функция {func_to_log.__name__} c параметрами {args} , {kwargs}. Вызов из модуля {func_to_log.__module__}')
+        ret = func_to_log(*args , **kwargs)
         return ret
     return log_saver
