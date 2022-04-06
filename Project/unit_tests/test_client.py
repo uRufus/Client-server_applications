@@ -1,51 +1,30 @@
 import sys
-import os
+sys.path.append('../')
+from client import create_presence, process_response_ans
+from common.variables import *
 import unittest
-
-sys.path.append(os.path.join(os.getcwd(), '..'))
-
-from client import create_presence, process_ans
-from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, PRESENCE, TIME, USER, ERROR, DEFAULT_PORT, \
-    DEFAULT_ACCOUNT_NAME, DEFAULT_IP_ADDRESS, OK_DICT, ERROR_DICT
+from errors import ReqFieldMissingError, ServerError
 
 
+# Класс с тестами
 class TestClass(unittest.TestCase):
-    def setUP(self):
-        pass
+    # тест коректного запроса
+    def test_def_presense(self):
+        test = create_presence('Guest')
+        test[TIME] = 1.1  # время необходимо приравнять принудительно иначе тест никогда не будет пройден
+        self.assertEqual(test, {ACTION: PRESENCE, TIME: 1.1, USER: {ACCOUNT_NAME: 'Guest'}})
 
-    def tearDown(self):
-        pass
-
-    def test_presence(self):
-        test = create_presence()
-        test[TIME] = 1
-        self.assertEqual(test, {ACTION: PRESENCE, TIME: 1, USER: {ACCOUNT_NAME: DEFAULT_ACCOUNT_NAME}})
-
-    def test_dict_presence(self):
-        self.assertIsInstance(create_presence(), dict)
-
-    def test_no_str_presence(self):
-        self.assertNotIsInstance(create_presence(), str)
-
-    def test_no_presence(self):
-        test = create_presence()
-        test[TIME] = 1
-        self.assertNotEqual(test, {ACTION: PRESENCE, TIME: 1})
-
+    # тест корректтного разбора ответа 200
     def test_200_ans(self):
-        self.assertEqual(process_ans(OK_DICT), '200 : ok')
+        self.assertEqual(process_response_ans({RESPONSE: 200}), '200 : OK')
 
+    # тест корректного разбора 400
     def test_400_ans(self):
-        self.assertEqual(process_ans(ERROR_DICT), '400 : Bad Request')
+        self.assertRaises(ServerError, process_response_ans , {RESPONSE: 400, ERROR: 'Bad Request'})
 
-    def test_error_ans(self):
-        self.assertRaises(ValueError, process_ans, 'Wrong dict')
-
-    def test_str_ans(self):
-        self.assertIsInstance(process_ans({RESPONSE: 200}), str)
-
-    def test_no_dict_ans(self):
-        self.assertNotIsInstance(process_ans({RESPONSE: 200}), dict)
+    # тест исключения без поля RESPONSE
+    def test_no_response(self):
+        self.assertRaises(ReqFieldMissingError, process_response_ans, {ERROR: 'Bad Request'})
 
 
 if __name__ == '__main__':

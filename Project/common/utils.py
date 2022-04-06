@@ -1,50 +1,33 @@
+from common.variables import *
+from errors import IncorrectDataRecivedError, NonDictInputError
 import json
-import os
 import sys
-
-sys.path.append(os.path.join(os.getcwd(), '..'))
-from common.variables import MAX_PACKAGE_LENGTH, ENCODING
-from sys import exit
-
+sys.path.append('../')
 from decos import log
 
 
+# Утилита приёма и декодирования сообщения
+# принимает байты выдаёт словарь, если приняточто-то другое отдаёт ошибку значения
 @log
-def check_port(port):
-    try:
-        if port < 1024 or port > 65535:
-            raise ValueError
-    except ValueError:
-        print('В качестве порта может быть указано только число в диапазоне от 1024 до 65535.')
-        exit(1)
-
-
-@log
-def check_instance(variable, types):
-    try:
-        if not isinstance(variable, types):
-            raise ValueError
-    except ValueError:
-        print(f'Значение {variable} не является типом {types}')
-        exit(1)
-
-
-@log
-def send_msg(sock, msg):
-    check_instance(msg, dict)
-    js_msg = json.dumps(msg)
-    check_instance(js_msg, str)
-    encoded_msg = js_msg.encode(ENCODING)
-    check_instance(encoded_msg, bytes)
-    sock.send(encoded_msg)
-
-
-@log
-def get_msg(client):
+def get_message(client):
     encoded_response = client.recv(MAX_PACKAGE_LENGTH)
-    check_instance(encoded_response, bytes)
-    json_response = encoded_response.decode(ENCODING)
-    check_instance(json_response, str)
-    response = json.loads(json_response)
-    check_instance(response, dict)
-    return response
+    if isinstance(encoded_response, bytes):
+        json_response = encoded_response.decode(ENCODING)
+        response = json.loads(json_response)
+        if isinstance(response, dict):
+            return response
+        else:
+            raise IncorrectDataRecivedError
+    else:
+        raise IncorrectDataRecivedError
+
+
+# Утилита кодирования и отправки сообщения
+# принимает словарь и отправляет его
+@log
+def send_message(sock, message):
+    if not isinstance(message, dict):
+        raise NonDictInputError
+    js_message = json.dumps(message)
+    encoded_message = js_message.encode(ENCODING)
+    sock.send(encoded_message)
