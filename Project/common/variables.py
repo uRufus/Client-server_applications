@@ -1,7 +1,7 @@
 import logging
 
 # Порт поумолчанию для сетевого ваимодействия
-DEFAULT_PORT = 7000
+DEFAULT_PORT = 7777
 # IP адрес по умолчанию для подключения клиента
 DEFAULT_IP_ADDRESS = '127.0.0.1'
 # Максимальная очередь подключений
@@ -12,6 +12,8 @@ MAX_PACKAGE_LENGTH = 1024
 ENCODING = 'utf-8'
 # Текущий уровень логирования
 LOGGING_LEVEL = logging.DEBUG
+# База данных для хранения данных сервера:
+SERVER_CONFIG = 'server_dist.ini'
 
 # Прококол JIM основные ключи:
 ACTION = 'action'
@@ -28,10 +30,19 @@ ERROR = 'error'
 MESSAGE = 'message'
 MESSAGE_TEXT = 'mess_text'
 EXIT = 'exit'
+GET_CONTACTS = 'get_contacts'
+LIST_INFO = 'data_list'
+REMOVE_CONTACT = 'remove'
+ADD_CONTACT = 'add'
+USERS_REQUEST = 'get_users'
 
 # Словари - ответы:
 # 200
 RESPONSE_200 = {RESPONSE: 200}
+# 202
+RESPONSE_202 = {RESPONSE: 202,
+                LIST_INFO:None
+                }
 # 400
 RESPONSE_400 = {
             RESPONSE: 400,
