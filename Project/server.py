@@ -8,9 +8,9 @@ import logs.config_server_log
 from common.variables import *
 from common.utils import *
 from common.decos import log
-from server.core import MessageProcessor
-from server.database import ServerStorage
-from server.main_window import MainWindow
+from server_side.core import MessageProcessor
+from server_side.database import ServerStorage
+from server_side.main_window import MainWindow
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 

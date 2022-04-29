@@ -9,9 +9,9 @@ import base64
 import sys
 
 sys.path.append('../')
-from client.main_window_conv import Ui_MainClientWindow
-from client.add_contact import AddContactDialog
-from client.del_contact import DelContactDialog
+from client_side.main_window_conv import Ui_MainClientWindow
+from client_side.add_contact import AddContactDialog
+from client_side.del_contact import DelContactDialog
 from common.errors import ServerError
 from common.variables import *
 

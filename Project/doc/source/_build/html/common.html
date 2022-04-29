@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>common package &#8212; My Own chat 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="decos module" href="decos.html" />
+    <link rel="prev" title="client_side package" href="client_side.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="common-package">
+<h1>common package<a class="headerlink" href="#common-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-common.decos">
+<span id="common-decos-module"></span><h2>common.decos module<a class="headerlink" href="#module-common.decos" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="common.decos.log">
+<code class="sig-prename descclassname">common.decos.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param">func_to_log</em><span class="sig-paren">)</span><a class="headerlink" href="#common.decos.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Декоратор, выполняющий логирование вызовов функций.
+Сохраняет события типа debug, содержащие
+информацию о имени вызываемой функиции, параметры с которыми
+вызывается функция, и модуль, вызывающий функцию.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="common.decos.login_required">
+<code class="sig-prename descclassname">common.decos.</code><code class="sig-name descname">login_required</code><span class="sig-paren">(</span><em class="sig-param">func</em><span class="sig-paren">)</span><a class="headerlink" href="#common.decos.login_required" title="Permalink to this definition">¶</a></dt>
+<dd><p>Декоратор, проверяющий, что клиент авторизован на сервере.
+Проверяет, что передаваемый объект сокета находится в
+списке авторизованных клиентов.
+За исключением передачи словаря-запроса
+на авторизацию. Если клиент не авторизован,
+генерирует исключение TypeError</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.descryptors">
+<span id="common-descryptors-module"></span><h2>common.descryptors module<a class="headerlink" href="#module-common.descryptors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="common.descryptors.Port">
+<em class="property">class </em><code class="sig-prename descclassname">common.descryptors.</code><code class="sig-name descname">Port</code><a class="headerlink" href="#common.descryptors.Port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Класс - дескриптор для номера порта.
+Позволяет использовать только порты с 1023 по 65536.
+При попытке установить неподходящий номер порта генерирует исключение.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.errors">
+<span id="common-errors-module"></span><h2>common.errors module<a class="headerlink" href="#module-common.errors" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="common.errors.ServerError">
+<em class="property">exception </em><code class="sig-prename descclassname">common.errors.</code><code class="sig-name descname">ServerError</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span><a class="headerlink" href="#common.errors.ServerError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Класс - исключение, для обработки ошибок сервера.
+При генерации требует строку с описанием ошибки,
+полученную с сервера.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.metaclasses">
+<span id="common-metaclasses-module"></span><h2>common.metaclasses module<a class="headerlink" href="#module-common.metaclasses" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="common.metaclasses.ClientMaker">
+<em class="property">class </em><code class="sig-prename descclassname">common.metaclasses.</code><code class="sig-name descname">ClientMaker</code><span class="sig-paren">(</span><em class="sig-param">clsname</em>, <em class="sig-param">bases</em>, <em class="sig-param">clsdict</em><span class="sig-paren">)</span><a class="headerlink" href="#common.metaclasses.ClientMaker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Метакласс, проверяющий что в результирующем классе нет серверных
+вызовов таких как: accept, listen. Также проверяется, что сокет не
+создаётся внутри конструктора класса.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="common.metaclasses.ServerMaker">
+<em class="property">class </em><code class="sig-prename descclassname">common.metaclasses.</code><code class="sig-name descname">ServerMaker</code><span class="sig-paren">(</span><em class="sig-param">clsname</em>, <em class="sig-param">bases</em>, <em class="sig-param">clsdict</em><span class="sig-paren">)</span><a class="headerlink" href="#common.metaclasses.ServerMaker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Метакласс, проверяющий что в результирующем классе нет клиентских
+вызовов таких как: connect. Также проверяется, что серверный
+сокет является TCP и работает по IPv4 протоколу.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.utils">
+<span id="common-utils-module"></span><h2>common.utils module<a class="headerlink" href="#module-common.utils" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-common.variables">
+<span id="common-variables-module"></span><h2>common.variables module<a class="headerlink" href="#module-common.variables" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-common">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-common" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">My Own chat</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="client.html">client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_database.html">client_database module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_side.html">client_side package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decos.html">decos module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptor.html">descriptor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launcher.html">launcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launcher_ubuntu.html">launcher_ubuntu module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">logs package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metaclasses.html">metaclasses module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_db_decl.html">server_db_decl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_gui.html">server_gui module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_side.html">server_side package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_tests.html">unit_tests package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Project</a><ul>
+      <li>Previous: <a href="client_side.html" title="previous chapter">client_side package</a></li>
+      <li>Next: <a href="decos.html" title="next chapter">decos module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Anton.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/common.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

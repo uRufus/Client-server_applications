@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>server_db_decl module &#8212; My Own chat 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="server_gui module" href="server_gui.html" />
+    <link rel="prev" title="server module" href="server.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-server_db_decl">
+<span id="server-db-decl-module"></span><h1>server_db_decl module<a class="headerlink" href="#module-server_db_decl" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="server_db_decl.ServerDB">
+<em class="property">class </em><code class="sig-prename descclassname">server_db_decl.</code><code class="sig-name descname">ServerDB</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="class">
+<dt id="server_db_decl.ServerDB.ActiveUsers">
+<em class="property">class </em><code class="sig-name descname">ActiveUsers</code><span class="sig-paren">(</span><em class="sig-param">user</em>, <em class="sig-param">ip</em>, <em class="sig-param">port</em>, <em class="sig-param">time_conn</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.ActiveUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.ActiveUsers.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#server_db_decl.ServerDB.ActiveUsers.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.ActiveUsers.ip">
+<code class="sig-name descname">ip</code><a class="headerlink" href="#server_db_decl.ServerDB.ActiveUsers.ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.ActiveUsers.port">
+<code class="sig-name descname">port</code><a class="headerlink" href="#server_db_decl.ServerDB.ActiveUsers.port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.ActiveUsers.time_conn">
+<code class="sig-name descname">time_conn</code><a class="headerlink" href="#server_db_decl.ServerDB.ActiveUsers.time_conn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.ActiveUsers.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#server_db_decl.ServerDB.ActiveUsers.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="server_db_decl.ServerDB.AllUsers">
+<em class="property">class </em><code class="sig-name descname">AllUsers</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.AllUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.AllUsers.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#server_db_decl.ServerDB.AllUsers.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.AllUsers.last_conn">
+<code class="sig-name descname">last_conn</code><a class="headerlink" href="#server_db_decl.ServerDB.AllUsers.last_conn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.AllUsers.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#server_db_decl.ServerDB.AllUsers.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="server_db_decl.ServerDB.Base">
+<em class="property">class </em><code class="sig-name descname">Base</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.Base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The most base type</p>
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.Base.metadata">
+<code class="sig-name descname">metadata</code><em class="property"> = MetaData(bind=None)</em><a class="headerlink" href="#server_db_decl.ServerDB.Base.metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="server_db_decl.ServerDB.LoginHistory">
+<em class="property">class </em><code class="sig-name descname">LoginHistory</code><span class="sig-paren">(</span><em class="sig-param">user</em>, <em class="sig-param">ip</em>, <em class="sig-param">port</em>, <em class="sig-param">last_conn</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.LoginHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.LoginHistory.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#server_db_decl.ServerDB.LoginHistory.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.LoginHistory.ip">
+<code class="sig-name descname">ip</code><a class="headerlink" href="#server_db_decl.ServerDB.LoginHistory.ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.LoginHistory.last_conn">
+<code class="sig-name descname">last_conn</code><a class="headerlink" href="#server_db_decl.ServerDB.LoginHistory.last_conn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.LoginHistory.port">
+<code class="sig-name descname">port</code><a class="headerlink" href="#server_db_decl.ServerDB.LoginHistory.port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.LoginHistory.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#server_db_decl.ServerDB.LoginHistory.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="server_db_decl.ServerDB.UsersContacts">
+<em class="property">class </em><code class="sig-name descname">UsersContacts</code><span class="sig-paren">(</span><em class="sig-param">user</em>, <em class="sig-param">contact</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.UsersContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.UsersContacts.contact">
+<code class="sig-name descname">contact</code><a class="headerlink" href="#server_db_decl.ServerDB.UsersContacts.contact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.UsersContacts.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#server_db_decl.ServerDB.UsersContacts.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.UsersContacts.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#server_db_decl.ServerDB.UsersContacts.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="server_db_decl.ServerDB.UsersHistory">
+<em class="property">class </em><code class="sig-name descname">UsersHistory</code><span class="sig-paren">(</span><em class="sig-param">user</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.UsersHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code></p>
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.UsersHistory.accepted">
+<code class="sig-name descname">accepted</code><a class="headerlink" href="#server_db_decl.ServerDB.UsersHistory.accepted" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.UsersHistory.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#server_db_decl.ServerDB.UsersHistory.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.UsersHistory.sent">
+<code class="sig-name descname">sent</code><a class="headerlink" href="#server_db_decl.ServerDB.UsersHistory.sent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="server_db_decl.ServerDB.UsersHistory.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#server_db_decl.ServerDB.UsersHistory.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.active_users_list">
+<code class="sig-name descname">active_users_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.active_users_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.add_contact">
+<code class="sig-name descname">add_contact</code><span class="sig-paren">(</span><em class="sig-param">user</em>, <em class="sig-param">contact</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.add_contact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.get_contacts">
+<code class="sig-name descname">get_contacts</code><span class="sig-paren">(</span><em class="sig-param">username</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.get_contacts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.login_history">
+<code class="sig-name descname">login_history</code><span class="sig-paren">(</span><em class="sig-param">username=None</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.login_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.message_history">
+<code class="sig-name descname">message_history</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.message_history" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.process_message">
+<code class="sig-name descname">process_message</code><span class="sig-paren">(</span><em class="sig-param">sender</em>, <em class="sig-param">recipient</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.process_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.remove_contact">
+<code class="sig-name descname">remove_contact</code><span class="sig-paren">(</span><em class="sig-param">user</em>, <em class="sig-param">contact</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.remove_contact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.user_login">
+<code class="sig-name descname">user_login</code><span class="sig-paren">(</span><em class="sig-param">username</em>, <em class="sig-param">ip_address</em>, <em class="sig-param">port</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.user_login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.user_logout">
+<code class="sig-name descname">user_logout</code><span class="sig-paren">(</span><em class="sig-param">username</em><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.user_logout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="server_db_decl.ServerDB.users_list">
+<code class="sig-name descname">users_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_db_decl.ServerDB.users_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">My Own chat</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="client.html">client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_database.html">client_database module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_side.html">client_side package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decos.html">decos module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptor.html">descriptor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launcher.html">launcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launcher_ubuntu.html">launcher_ubuntu module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">logs package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metaclasses.html">metaclasses module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">server module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">server_db_decl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_gui.html">server_gui module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_side.html">server_side package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_tests.html">unit_tests package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Project</a><ul>
+      <li>Previous: <a href="server.html" title="previous chapter">server module</a></li>
+      <li>Next: <a href="server_gui.html" title="next chapter">server_gui module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Anton.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/server_db_decl.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
