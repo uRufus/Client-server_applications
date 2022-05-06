@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>unit_tests package &#8212; My Own chat 0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="server_side package" href="server_side.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="unit-tests-package">
+<h1>unit_tests package<a class="headerlink" href="#unit-tests-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="unit-tests-test-client-module">
+<h2>unit_tests.test_client module<a class="headerlink" href="#unit-tests-test-client-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-unit_tests.test_utils">
+<span id="unit-tests-test-utils-module"></span><h2>unit_tests.test_utils module<a class="headerlink" href="#module-unit_tests.test_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="unit_tests.test_utils.TestSocket">
+<em class="property">class </em><code class="sig-prename descclassname">unit_tests.test_utils.</code><code class="sig-name descname">TestSocket</code><span class="sig-paren">(</span><em class="sig-param">test_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.TestSocket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="unit_tests.test_utils.TestSocket.recv">
+<code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param">max_len</em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.TestSocket.recv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="unit_tests.test_utils.TestSocket.send">
+<code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">message_to_send</em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.TestSocket.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="unit_tests.test_utils.Tests">
+<em class="property">class </em><code class="sig-prename descclassname">unit_tests.test_utils.</code><code class="sig-name descname">Tests</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.Tests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="attribute">
+<dt id="unit_tests.test_utils.Tests.test_dict_recv_err">
+<code class="sig-name descname">test_dict_recv_err</code><em class="property"> = {'error': 'Bad Request', 'response': 400}</em><a class="headerlink" href="#unit_tests.test_utils.Tests.test_dict_recv_err" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="unit_tests.test_utils.Tests.test_dict_recv_ok">
+<code class="sig-name descname">test_dict_recv_ok</code><em class="property"> = {'response': 200}</em><a class="headerlink" href="#unit_tests.test_utils.Tests.test_dict_recv_ok" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="unit_tests.test_utils.Tests.test_dict_send">
+<code class="sig-name descname">test_dict_send</code><em class="property"> = {'action': 'presence', 'time': 111111.111111, 'user': {'account_name': 'test_test'}}</em><a class="headerlink" href="#unit_tests.test_utils.Tests.test_dict_send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="unit_tests.test_utils.Tests.test_get_message">
+<code class="sig-name descname">test_get_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.Tests.test_get_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="unit_tests.test_utils.Tests.test_send_message">
+<code class="sig-name descname">test_send_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unit_tests.test_utils.Tests.test_send_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-unit_tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-unit_tests" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">My Own chat</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="client.html">client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_database.html">client_database module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client_side.html">client_side package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decos.html">decos module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="descriptor.html">descriptor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">errors module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launcher.html">launcher module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launcher_ubuntu.html">launcher_ubuntu module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logs.html">logs package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metaclasses.html">metaclasses module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_db_decl.html">server_db_decl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_gui.html">server_gui module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_side.html">server_side package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">unit_tests package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Project</a><ul>
+      <li>Previous: <a href="server_side.html" title="previous chapter">server_side package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Anton.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/unit_tests.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
